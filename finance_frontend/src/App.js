@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //components/pages
 import HomePage from './pages/HomePage';
+import {Login} from "./pages/login";
+import {Logout} from './pages/logout';
+import {Navigation} from './components/navigation';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BurgerMenu from './components/BurgerMenu';
@@ -15,22 +18,14 @@ ReactDOM.render(<App />, rootElement);
 
 function  App() {
   return (
-    <Router>
-      <div className="App" id="outer-container">
-        {/*<Nav outerContainerId={'outer-container'} pageWrapId={'page-wrap'} />*/}
-        <Header />
-        <AuthButtons />
-        <BurgerMenu />
-        <div id="page-wrap">
-          <Routes>
-            {/*pages*/}
-            <Route exact path="/" element={<HomePage />} />
-            {/*<Route path="/portfolio" component={Portfolio} />*/}
-          </Routes>
-        </div>
-        <Footer />
-      </div>
-    </Router>
+      <BrowserRouter>
+        <Navigation></Navigation>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/logout" element={<Logout/>}/>
+        </Routes>
+      </BrowserRouter>
   );
 };
 
