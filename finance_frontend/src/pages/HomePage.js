@@ -1,7 +1,7 @@
-// Import the react JS packages
-import { useEffect, useState } from "react";
-import axios from "axios";
-// Define the Login function.
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import StockList from '../components/StockList'; // Import the StockList component
+
 export const HomePage = () => {
   const [message, setMessage] = useState('');
   useEffect(() => {
@@ -28,6 +28,7 @@ export const HomePage = () => {
   return (
     <div className="form-signin mt-5 text-center">
       <h3>Hi Welcome to investing page {message}</h3>
+      <StockList /> 
     </div>
   )
 }

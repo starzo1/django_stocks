@@ -7,10 +7,9 @@ import {HomePage} from './pages/HomePage';
 import {Login} from "./pages/login";
 import {Logout} from './pages/logout';
 import {Navigation} from './components/navigation';
-import Header from './components/Header';
 import Footer from './components/Footer';
 import BurgerMenu from './components/BurgerMenu';
-import AuthButtons from './components/AuthButtons';
+
 
 
 const rootElement = document.getElementById('root');
@@ -25,6 +24,7 @@ function  App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/logout" element={<Logout/>}/>
         </Routes>
+        <Footer></Footer>
       </BrowserRouter>
   );
 };
