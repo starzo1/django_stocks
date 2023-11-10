@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //components/pages
-import HomePage from './pages/HomePage';
+import {HomePage} from './pages/HomePage';
 import {Login} from "./pages/login";
 import {Logout} from './pages/logout';
 import {Navigation} from './components/navigation';
