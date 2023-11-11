@@ -34,4 +34,10 @@ class StockView(viewsets.ModelViewSet):
     
 class PriceView(viewsets.ModelViewSet):
     serializer_class = PriceSerializer
-    queryset = Price.objects.all()
+    def get_queryset(self):
+    # Get the ticker query parameter from the request
+        ticker = self.request.query_params.get('ticker')
+        if ticker is not None:
+            return Price.objects.filter(stock=ticker)
+        # Otherwise, return all prices
+        return Price.objects.all()

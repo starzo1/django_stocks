@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //components/pages
@@ -11,9 +10,6 @@ import Footer from './components/Footer';
 import BurgerMenu from './components/BurgerMenu';
 
 
-
-const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
 
 function  App() {
   return (
