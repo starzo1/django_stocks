@@ -1,6 +1,7 @@
 // Import the react JS packages 
 import axios from "axios";
 import { useState } from "react";// Define the Login function.
+import '../styles/login.css';
 
 // Define the Login function.
 export const Login = () => {
@@ -30,7 +31,8 @@ export const Login = () => {
         window.location.href = '/'
     }
 
-    return (<div className="Auth-form-container">
+    return (
+    <div className="Auth-form-container">
         <form className="Auth-form" onSubmit={submit}>
             <div className="Auth-form-content">
                 <h3 className="Auth-form-title">Sign In</h3>
