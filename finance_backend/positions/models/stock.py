@@ -13,7 +13,7 @@ class Stock(models.Model):
         return self.ticker
 
     def update_info(self):
-        info = yf.Ticker(self.ticker).info
+        info = yf.Ticker(self.ticker).info #404 disabled this atm
         self.name = info['longName']
         self.sector = info['sector']
         self.industry = info['industry']
@@ -41,13 +41,10 @@ class Price(models.Model):
         return f'{self.stock.ticker} - {self.date}'
 
     def update_price(self):
-        # Fetch the price data, # todo yesterday to change
-        
-        #date_obj = datetime.strptime(date_string, "%Y-%m-%d")
+        # Fetch the price data
         date_interval = self.date - timedelta(days=10)
         data = yf.download(self.stock.ticker, start=date_interval, end=self.date)
         if data.empty:
-        # Handle the case where no data is found
             print(f"No price data found for {self.stock.ticker} on {self.date}")
         # Update the fields with the fetched data
         else:
@@ -57,5 +54,4 @@ class Price(models.Model):
             self.close = data['Close'].iloc[-1]
             self.adj_close = data['Adj Close'].iloc[-1]
             self.volume = data['Volume'].iloc[-1]
-            #self.date = yesterday
             self.save()

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Table, Button } from 'react-bootstrap'; // Assuming you are using Bootstrap components
+import { Table, Button } from 'react-bootstrap';
 
 const PriceListPage = () => {
   const [latestPrices, setLatestPrices] = useState([]);
@@ -49,8 +49,8 @@ const PriceListPage = () => {
             <th>Close</th>
             <th>Adj Close</th>
             <th>Volume</th>
-            <th>24H Change %</th> {/* New column for the percentage change */}
-            <th></th> {/* New column for the "Buy Now" button */}
+            <th>24H Change %</th>
+            <th></th> {/* "Buy Now" button */}
           </tr>
         </thead>
         <tbody>

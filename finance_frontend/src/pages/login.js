@@ -1,7 +1,7 @@
 // Import the react JS packages 
 import axios from "axios";
 import { useState } from "react";// Define the Login function.
-import '../styles/login.css';
+import '../styles/Login.css';
 
 // Define the Login function.
 export const Login = () => {

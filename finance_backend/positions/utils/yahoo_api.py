@@ -4,7 +4,7 @@ from positions.models import Stock, Price
             
 def update_data():
     # Create or retrieve the Stock object for the ticker symbol you want to update
-    stock_tickers = ['AAPL', 'MSFT', 'AMZN', 'GOOG', 'META']
+    stock_tickers = ['AAPL', 'MSFT', 'AMZN', 'GOOG', 'META', 'TSLA', 'TWNK', 'PLUG', 'PLTR', 'AMD', 'NVDA']
     today = datetime.date.today()
     for ticker in stock_tickers:
         stock, created = Stock.objects.get_or_create(ticker=ticker)          
