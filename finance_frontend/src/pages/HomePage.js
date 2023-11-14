@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import StockList from '../components/StockList';
 
-export const HomePage = () => {
-  const [message, setMessage] = useState('');
+const HomePage = () => {
   const [stocks, setStocks] = useState([]);
   const [prices, setPrices] = useState([]);
 
@@ -19,7 +18,7 @@ export const HomePage = () => {
             axios.get('http://localhost:8000/api/prices/'),
           ]);
 
-          setMessage(stocksResponse.data.message);
+
           setStocks(stocksResponse.data);
           setPrices(pricesResponse.data);
         } catch (e) {
@@ -30,9 +29,11 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <div className="form-signin mt-5 text-center">
-      <h3>Hi Welcome to investing page {message}</h3>
+    <div style={{ textAlign: 'center' }}>
+      <h3>Hi, Welcome to the investing page </h3>
       <StockList stocks={stocks} prices={prices} />
     </div>
   );
 };
+
+export default HomePage

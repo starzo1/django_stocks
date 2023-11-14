@@ -4,7 +4,7 @@ import '../styles/SignUp.css';
 
 
 
-export const SignUp = () => {
+const SignUp = () => {
     const [username, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -106,3 +106,5 @@ export const SignUp = () => {
         </div>
     )
 }
+
+export default SignUp
