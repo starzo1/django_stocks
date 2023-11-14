@@ -27,8 +27,9 @@ DATABASES = {
 
 6. Create a superuser for the project using `python manage.py createsuperuser` and follow the prompts to enter your username, email, and password.
 7. Run the migrations using `python manage.py migrate` to create the tables in the database.
-8. Launch the backend server using `python manage.py runserver` and check that it is running on `http://127.0.0.1:8000/`.
-9. In another terminal, navigate to the `finance_frontend` folder and install the dependencies using `npm install`.
-10. Launch the frontend server using `npm start` and check that it is running on `http://localhost:3000/`.
+8. Run script `python manage.py run_yahoo_api` that fetches some example list of tickers info from `yfinance` API to fill in stock and pricing tables.
+9. Launch the backend server using `python manage.py runserver` and check that it is running on `http://127.0.0.1:8000/`.
+10. In another terminal, navigate to the `finance_frontend` folder and install the dependencies using `npm install`.
+11. Launch the frontend server using `npm start` and check that it is running on `http://localhost:3000/`.
 
 You have successfully set up the project!
