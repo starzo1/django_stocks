@@ -28,6 +28,7 @@ router.register(r'prices', views.PriceView, 'price')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('users/', include('authentification.urls')),
     path('token/', 
           jwt_views.TokenObtainPairView.as_view(), 
           name ='token_obtain_pair'),

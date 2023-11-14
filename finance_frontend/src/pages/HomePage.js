@@ -10,7 +10,8 @@ export const HomePage = () => {
   useEffect(() => {
     if (localStorage.getItem('access_token') === null) {
       window.location.href = '/login';
-    } else {
+    } 
+    else {
       (async () => {
         try {
           const [stocksResponse, pricesResponse] = await Promise.all([
