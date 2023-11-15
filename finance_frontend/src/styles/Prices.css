@@ -1,0 +1,10 @@
+.prices-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh; /* Adjust as needed */
+  }
+  
+  .centered-content {
+    text-align: center;
+  }
