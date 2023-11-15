@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Table, Button } from 'react-bootstrap';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import {SparklineCell} from '../components/SparklineCell';
 import '../styles/Prices.css'; 
 
 const PriceListPage = () => {
@@ -106,6 +107,7 @@ const PriceListPage = () => {
                 <th onClick={() => handleSort('percentChange')}>
                   24H Change % {renderSortIndicator('percentChange')}
                 </th>
+                <th>10D Graph</th>
                 <th></th> {/* "Buy Now" button */}
               </tr>
             </thead>
@@ -124,6 +126,9 @@ const PriceListPage = () => {
                     <td>{price.adj_close}</td>
                     <td>{price.volume}</td>
                     <td>{percentChange.toFixed(2)}%</td>
+                    <td>
+                      <SparklineCell ticker={price.stock} />
+                    </td>
                     <td>
                       <Button variant="success">Buy/Sell</Button>
                     </td>
