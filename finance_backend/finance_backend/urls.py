@@ -19,6 +19,7 @@ from django.urls import path, include
 from rest_framework import routers
 from rest_framework_simplejwt import views as jwt_views
 from positions import views
+from authentification.views import MyTokenObtainPairView
 
 
 router = routers.DefaultRouter()
@@ -30,7 +31,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('users/', include('authentification.urls')),
     path('token/', 
-          jwt_views.TokenObtainPairView.as_view(), 
+          MyTokenObtainPairView.as_view(), 
           name ='token_obtain_pair'),
     path('token/refresh/', 
           jwt_views.TokenRefreshView.as_view(), 

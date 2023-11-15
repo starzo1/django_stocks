@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 
+
 from .serializers import StockSerializer, PriceSerializer
 from .models import Stock, Price
 
@@ -41,3 +42,4 @@ class PriceView(viewsets.ModelViewSet):
             return Price.objects.filter(stock=ticker)
         # Otherwise, return all prices
         return Price.objects.all()
+    

@@ -3,7 +3,7 @@ import { useNavigate, Navigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import '../styles/LandingPage.css'; 
-import InvestImg from '../images/invest.png'; // Import the photo from your local directory
+import InvestImg from '../images/invest.png';
 
 function LandingPage() {
   // Check authorization status here
