@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
 
-export function Footer() {
+function Footer() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="bottom">
       <Container>
@@ -30,3 +30,4 @@ export function Footer() {
   );
 }
 
+export default Footer;

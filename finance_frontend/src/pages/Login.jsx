@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState } from "react";
 import '../styles/Login.css';
 
-// Define the Login function.
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -69,4 +68,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;
