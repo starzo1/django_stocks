@@ -1,13 +1,20 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation, Footer } from "./components";
-import { Login, Logout, LandingPage, HomePage, PriceListPage, SignUp } from "./pages";
+import {
+  Login,
+  Logout,
+  LandingPage,
+  HomePage,
+  PriceListPage,
+  SignUp,
+} from "./pages";
 
 
 function App() {
   return (
     <BrowserRouter>
-    <Navigation />
+      <Navigation />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<HomePage />} />

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
+import React from "react";
+import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
 
 function Footer() {
   return (
@@ -15,9 +15,15 @@ function Footer() {
             <Nav.Link href="/privacy">Privacy Policy</Nav.Link>
           </Nav>
           <Nav className="ms-auto">
-            <Nav.Link href="https://www.facebook.com" target="_blank">Facebook</Nav.Link>
-            <Nav.Link href="https://www.twitter.com" target="_blank">Twitter</Nav.Link>
-            <Nav.Link href="https://www.linkedin.com" target="_blank">LinkedIn</Nav.Link>
+            <Nav.Link href="https://www.facebook.com" target="_blank">
+              Facebook
+            </Nav.Link>
+            <Nav.Link href="https://www.twitter.com" target="_blank">
+              Twitter
+            </Nav.Link>
+            <Nav.Link href="https://www.linkedin.com" target="_blank">
+              LinkedIn
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
