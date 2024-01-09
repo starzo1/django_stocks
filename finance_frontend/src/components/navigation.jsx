@@ -5,10 +5,10 @@ function Navigation() {
   const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("access_token") !== null) {
+    if (localStorage.getItem("access_token")) {
       setIsAuth(true);
     }
-  }, [isAuth]);
+  }, []);
 
   return (
     <Navbar bg="dark" variant="dark">
