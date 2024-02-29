@@ -1,26 +1,34 @@
 import axios from "axios";
-import { useState } from "react";
 import "../styles/Login.css";
+import { useForm } from "react-hook-form";
+import InputField from "../components/InputField";
+import { useState } from "react";
+
 
 const Login = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-
-    const submit = async (e) => {
-        e.preventDefault();
-
+    const [errorMessage, setErrorMessage] = useState("");
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: {
+        username: "",
+        password: "",
+      },
+    });
+  
+    const onSubmit = async (data) => {
         const user = {
-            username: username,
-            password: password,
+            username: data.username,
+            password: data.password,
         };
 
         try {
             const { data } = await axios.post(
                 "http://localhost:8000/token/",
                 user,
-                {
-                    headers: { "Content-Type": "application/json" },
-                },
+                { headers: { "Content-Type": "application/json" } },
                 { withCredentials: true }
             );
 
@@ -33,44 +41,35 @@ const Login = () => {
             window.location.href = "/home";
         } catch (error) {
             console.error(error);
-            alert("Invalid username or password. Please try again.");
+            setErrorMessage("Invalid username or password. Please try again.");
         }
     };
 
     return (
-        <div className="Auth-form-container">
-            <form className="Auth-form" onSubmit={submit}>
-                <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Sign In</h3>
-                    <div className="form-group mt-3">
-                        <label>Username</label>
-                        <input
-                            className="form-control mt-1"
-                            placeholder="Enter Username"
-                            name="username"
-                            type="text"
-                            value={username}
-                            required
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                    </div>
-                    <div className="form-group mt-3">
-                        <label>Password</label>
-                        <input
-                            name="password"
-                            type="password"
-                            className="form-control mt-1"
-                            placeholder="Enter password"
-                            value={password}
-                            required
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
+        <div className="Auth-form-layout">
+            <form className="Auth-form-container" onSubmit={handleSubmit(onSubmit)}>
+                <h3>Sign In</h3>
+                <div>
+                    <InputField
+                    label="Username"
+                    name="username"
+                    register={register}
+                    required
+                    errors={errors}
+                    />
+                    <InputField
+                    label="Password"
+                    name="password"
+                    register={register}
+                    required
+                    errors={errors}
+                    />
                     <div className="d-grid gap-2 mt-3">
                         <button type="submit" className="btn btn-primary">
                             Submit
                         </button>
                     </div>
+                    {errorMessage && <p>{errorMessage}</p>}
                 </div>
             </form>
         </div>

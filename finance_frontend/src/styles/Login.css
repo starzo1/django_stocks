@@ -1,7 +1,11 @@
+.Auth-form-layout {
+  display: flex;
+  justify-content: center;
+}
+
 .Auth-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    height: 100vh; /* Optionally set a specific height */
-  }
-  
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
